@@ -68,13 +68,13 @@
 		}
 
 		$("#content").on("swipeleft", function(event){
-			console.log("swipeleft");
+			//console.log("swipeleft");
 			arrCounter++;
 			updateContent();
 		});
 
 		$("#content").on("swiperight", function(event){
-			console.log("swiperight");
+			//console.log("swiperight");
 			arrCounter--;
 			updateContent();
 		});
@@ -92,20 +92,20 @@
     	}
 
 		function getData(){
-			console.log("inside getData");
+			//console.log("inside getData");
 	        var url = 'http://www.google.com/doodles/doodles.xml';
 	        $.ajax({
 		        type: "GET",
 		        url: 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=1000&callback=?&q=' + encodeURIComponent(url),
 		        dataType: 'json',
 		        error: function(){
-		            //alert('Unable to load feed, Incorrect path or invalid feed');
-		            console.log('Unable to load feed, Incorrect path or invalid feed');
+		            alert('Unable to load feed, Incorrect path or invalid feed');
+		            //console.log('Unable to load feed, Incorrect path or invalid feed');
 		        },
 		        success: function(xml){
 		            var values = xml.responseData.feed.entries;
 		            var tempObj = {};
-		            console.dir(values);
+		            //console.dir(values);
 		            //$("#quote").html(values);
 		            var len = values.length;
 		            for(var i=0;i<len;i++){
