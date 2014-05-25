@@ -45,12 +45,19 @@
 	<body onLoad="getData()">
 		<div data-role="page" id="page1">
 		    <div data-theme="" data-role="header" data-position="fixed">
-		    <span id="pgTitle">Doodle</span>
+		    	<span id="pgTitle">Google Doodle</span>
+				<a href="#popupBasic" data-position-to="window" data-transition="fade" data-rel="popup" id="infoicon" data-icon="info" class="ui-btn-right" data-iconpos="notext">Info</a>		    	
 		    </div>
 		    <div id="content" >
 		    	<!-- <input type="button" value="getFeed"  /> -->
 		    	<div id="entry"></div>
 		    </div>
+			<div data-role="popup" id="popupBasic" data-overlay-theme="a" class="ui-content" >
+		    	<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+					<p>This is a Very basic Google Doodle App.<p>
+					<p>Swipe left or right to see more doodles.<p>
+					<p>Created By: <a href="http://www.rushis.com">Rushi</a><p>
+			</div>		    
 		    <div data-role="footer" data-position="fixed">
 				<h1 id="imgTitle"></h1>
 			</div>
@@ -67,13 +74,13 @@
 			this.dt = dt;
 		}
 
-		$("#content").on("swipeleft", function(event){
+		$("#page1").on("swipeleft", function(event){
 			//console.log("swipeleft");
 			arrCounter++;
 			updateContent();
 		});
 
-		$("#content").on("swiperight", function(event){
+		$("#page1").on("swiperight", function(event){
 			//console.log("swiperight");
 			arrCounter--;
 			updateContent();
